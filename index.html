@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUCCION HARRIET - Construyendo Futuros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-size: 1.25rem; /* Adjust size as needed */
+        line-height: 1;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Custom Swiper Navigation Button Styles */
+      .swiper-button-next,
+      .swiper-button-prev {
+        background-color: rgba(30, 58, 138, 0.7); /* secondary color with opacity */
+        color: white;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        transition: background-color 0.3s ease;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+          background-color: rgba(30, 58, 138, 1); /* secondary color */
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .swiper-container-projects {
+          position: relative;
+          padding-left: 50px;
+          padding-right: 50px;
+          margin-left: -50px;
+          margin-right: -50px;
+      }
+       .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+       }
+       .project-card .p-5 {
+           flex-grow: 1;
+       }
+       /* WhatsApp Button Style */
+       .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366; /* Official WhatsApp Green */
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px; /* Icon size */
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            z-index: 100; /* Ensure it's above most content */
+            transition: background-color 0.3s ease;
+            display: flex; /* For centering icon */
+            align-items: center; /* For centering icon */
+            justify-content: center; /* For centering icon */
+       }
+       .whatsapp-float:hover {
+            background-color: #128C7E; /* Darker WhatsApp Green */
+       }
+
+    </style>
+    <script>
+        // Basic Tailwind configuration (optional)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a', // Main site green
+                        secondary: '#1e3a8a', // Dark blue
+                        whatsapp: '#25D366', // WhatsApp Green
+                        whatsapp_dark: '#128C7E', // Darker WhatsApp Green
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="LOGO_VERDE.png" alt="Logo de CONSTRUCCION HARRIET" class="h-10 md:h-12 w-auto mr-2">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-600 hover:text-primary transition duration-300">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:text-primary transition duration-300">Servicios</a>
+                <a href="#proyectos" class="text-gray-600 hover:text-primary transition duration-300">Proyectos</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-primary transition duration-300">Nosotros</a>
+                <a href="#contacto" class="text-gray-600 hover:text-primary transition duration-300">Contacto</a>
+            </div>
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <span class="lucide">&#xe96d;</span> </button>
+        </nav>
+        </header>
+
+    <section id="inicio" class="bg-secondary text-white py-20 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <img src="LOGO_VERDE.png" alt="Logo de CONSTRUCCION HARRIET" class="h-24 w-auto mx-auto mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Construyendo Tus Sueños, Ladrillo a Ladrillo</h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-200">Experiencia, calidad y compromiso en cada proyecto. ¡Presupuestos sin cargo!</p>
+            <a href="#contacto" class="bg-primary hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg inline-flex items-center">
+                Contáctanos <span class="lucide ml-2">&#xe9b3;</span> </a>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                    <span class="lucide text-primary text-4xl mb-4 self-center">&#xe91b;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Construcción</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
+                        <li>Sistema Tradicional</li>
+                        <li>Sistema Steel Frame</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                    <span class="lucide text-primary text-4xl mb-4 self-center">&#xe97b;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Planos</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
+                        <li>Regularización</li>
+                        <li>Mensura y Sub-división</li>
+                        <li>Loteos</li>
+                        <li>Obra Nueva</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                     <span class="lucide text-primary text-4xl mb-4 self-center">&#xea47;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Extras</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
+                        <li>Portones y Rejas</li>
+                        <li>Termos Solares</li>
+                        <li>Cercos Perimetrales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-16 md:py-24 bg-gray-100 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Galería de Proyectos</h2>
+            <div class="swiper-container-projects">
+                <div class="swiper project-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto">
+                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/16a34a/ffffff?text=Proyecto+Residencial+A" alt="Imagen de Proyecto Residencial A" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Residencia Moderna A</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto residencial A.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=Proyecto+Comercial+B" alt="Imagen de Proyecto Comercial B" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Edificio de Oficinas B</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto comercial B.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                           <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/cccccc/333333?text=Remodelación+C" alt="Imagen de Remodelación C" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Reforma Integral C</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve de la remodelación C.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/16a34a/ffffff?text=Proyecto+Residencial+D" alt="Imagen de Proyecto Residencial D" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Vivienda Unifamiliar D</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto residencial D.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=Proyecto+Comercial+E" alt="Imagen de Proyecto Comercial E" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Local Comercial E</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto comercial E.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                           <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
+                                <img src="https://placehold.co/600x400/cccccc/333333?text=Remodelación+F" alt="Imagen de Remodelación F" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+                                <div class="p-5">
+                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Ampliación Vivienda F</h3>
+                                    <p class="text-gray-600 text-sm mb-3">Descripción breve de la remodelación F.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev -left-2"></div>
+                    <div class="swiper-button-next -right-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x450/1e3a8a/ffffff?text=Equipo+Constructora" alt="Imagen del equipo de la constructora" class="rounded-lg shadow-lg w-full">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">Sobre CONSTRUCCION HARRIET</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">Somos una empresa constructora con amplia experiencia en el sector. Nuestro compromiso es entregar proyectos de alta calidad, cumpliendo con los plazos y presupuestos acordados.</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">Nos apasiona construir relaciones sólidas con nuestros clientes, basadas en la confianza, la transparencia y la excelencia en cada detalle.</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Profesionalismo y Experiencia Comprobada</li>
+                    <li>Materiales de Primera Calidad</li>
+                    <li>Atención Personalizada</li>
+                    <li>Innovación y Sostenibilidad</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-secondary">Ponte en Contacto</h2>
+            <p class="text-center text-gray-600 mb-10">
+                Llámanos al <a href="tel:+543416587861" class="text-primary hover:underline">341 658-7861</a> / <a href="tel:+543416937577" class="text-primary hover:underline">341 693-7577</a>, envíanos un <a href="https://wa.me/5493416587861" target="_blank" rel="noopener noreferrer" class="text-whatsapp hover:underline">WhatsApp</a> o completa el formulario.
+            </p>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                 <form action="mailto:matias.larenti@gmail.com" method="post" enctype="text/plain">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" name="Nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" name="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Asunto</label>
+                        <input type="text" id="subject" name="Asunto" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                        <textarea id="message" name="Mensaje" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-primary hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg inline-flex items-center">
+                            Enviar Mensaje <span class="lucide ml-2">&#xe9eb;</span> </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Contacto</h4>
+                    <p class="mb-1"><span class="lucide mr-2 align-middle inline-block">&#xe9d6;</span> <a href="tel:+543416587861" class="hover:text-primary">341 658-7861</a></p>
+                    <p><span class="lucide mr-2 align-middle inline-block">&#xe9d6;</span> <a href="tel:+543416937577" class="hover:text-primary">341 693-7577</a></p>
+                     <p class="mt-4 font-semibold text-primary">¡Presupuestos sin cargo!</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#servicios" class="hover:text-primary transition duration-300">Servicios</a></li>
+                        <li><a href="#proyectos" class="hover:text-primary transition duration-300">Proyectos</a></li>
+                        <li><a href="#nosotros" class="hover:text-primary transition duration-300">Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-primary transition duration-300">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Síguenos</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=100067952997183&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://www.instagram.com/construccionharriet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://wa.me/5493416587861" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-600 my-8">
+            <p class="text-sm">&copy; 2025 CONSTRUCCION HARRIET. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5493416587861" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // --- Mobile Menu Logic ---
+        const menuButton = document.querySelector('header button.md\\:hidden');
+        const navLinksContainer = document.querySelector('header div.hidden.md\\:flex');
+        const mobileNavLinks = document.createElement('div');
+        const header = document.querySelector('header');
+
+        mobileNavLinks.classList.add('hidden', 'absolute', 'bg-white', 'w-full', 'left-0', 'py-4', 'shadow-lg', 'md:hidden', 'flex-col', 'items-center', 'space-y-4', 'z-40');
+
+        function positionMobileMenu() {
+          mobileNavLinks.style.top = header.offsetHeight + 'px';
+        }
+        positionMobileMenu();
+
+        if (navLinksContainer) {
+            const linksToClone = navLinksContainer.querySelectorAll('a');
+            linksToClone.forEach(link => {
+                const clonedLink = link.cloneNode(true);
+                clonedLink.classList.add('py-2', 'w-full', 'text-center');
+                mobileNavLinks.appendChild(clonedLink);
+            });
+            document.body.appendChild(mobileNavLinks);
+        }
+
+        if (menuButton && mobileNavLinks) {
+            menuButton.addEventListener('click', () => {
+                const isHidden = mobileNavLinks.classList.contains('hidden');
+                mobileNavLinks.classList.toggle('hidden', !isHidden);
+                mobileNavLinks.classList.toggle('flex', isHidden);
+                menuButton.querySelector('.lucide').innerHTML = isHidden ? '&#xe96a;' : '&#xe96d;';
+            });
+        }
+
+        const mobileLinks = mobileNavLinks.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavLinks.classList.add('hidden');
+                mobileNavLinks.classList.remove('flex');
+                menuButton.querySelector('.lucide').innerHTML = '&#xe96d;';
+            });
+        });
+
+        window.addEventListener('resize', positionMobileMenu);
+
+        document.addEventListener('click', (event) => {
+          const isClickInsideMenu = mobileNavLinks.contains(event.target);
+          const isClickOnMenuButton = menuButton.contains(event.target);
+          if (!isClickInsideMenu && !isClickOnMenuButton && !mobileNavLinks.classList.contains('hidden')) {
+            mobileNavLinks.classList.add('hidden');
+            mobileNavLinks.classList.remove('flex');
+            menuButton.querySelector('.lucide').innerHTML = '&#xe96d;';
+          }
+        });
+
+        // --- Swiper Initialization ---
+        const swiper = new Swiper('.project-swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: false,
+        });
+    </script>
+
+</body>
+</html>
