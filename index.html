@@ -3,394 +3,785 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONSTRUCCION HARRIET - Construyendo Futuros</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Construcción Harriet | Constructora Rosario | Steel Frame, Planos</title>
+    <meta name="description" content="Constructora CONSTRUCCION HARRIET en Rosario. Especialistas en construcción tradicional, steel frame, planos de obra, reformas y más. Presupuestos sin cargo.">
+
     <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-size: 1.25rem; /* Adjust size as needed */
-        line-height: 1;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      /* Custom Swiper Navigation Button Styles */
-      .swiper-button-next,
-      .swiper-button-prev {
-        background-color: rgba(30, 58, 138, 0.7); /* secondary color with opacity */
-        color: white;
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        transition: background-color 0.3s ease;
-      }
-      .swiper-button-next:hover,
-      .swiper-button-prev:hover {
-          background-color: rgba(30, 58, 138, 1); /* secondary color */
-      }
-      .swiper-button-next::after,
-      .swiper-button-prev::after {
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
-      .swiper-container-projects {
-          position: relative;
-          padding-left: 50px;
-          padding-right: 50px;
-          margin-left: -50px;
-          margin-right: -50px;
-      }
-       .project-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-       }
-       .project-card .p-5 {
-           flex-grow: 1;
-       }
-       /* WhatsApp Button Style */
-       .whatsapp-float {
+        :root {
+            --primary-color: #0F4C81; /* Azul oscuro profesional */
+            --secondary-color: #4B4A54; /* Gris oscuro */
+            --accent-color: #F2F4F8; /* Gris muy claro */
+            --highlight: #FFC107; /* Amarillo/dorado - color de construcción */
+            --text-dark: #2C2C2C;
+            --text-light: #FFFFFF;
+            --success: #25D366; /* Verde WhatsApp (Corregido para WhatsApp) */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark); /* Color de texto principal cambiado a oscuro */
+            padding-top: 80px; /* Added padding to prevent content overlap by fixed header */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
             position: fixed;
+            bottom: 30px;
+            right: 30px;
             width: 60px;
             height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366; /* Official WhatsApp Green */
-            color: #FFF;
-            border-radius: 50px;
+            background-color: var(--success);
+            color: white;
+            border-radius: 50%;
             text-align: center;
-            font-size: 30px; /* Icon size */
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-            z-index: 100; /* Ensure it's above most content */
-            transition: background-color 0.3s ease;
-            display: flex; /* For centering icon */
-            align-items: center; /* For centering icon */
-            justify-content: center; /* For centering icon */
-       }
-       .whatsapp-float:hover {
-            background-color: #128C7E; /* Darker WhatsApp Green */
-       }
+            font-size: 30px;
+            line-height: 60px; /* Centrado vertical icono */
+            z-index: 2000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
 
-    </style>
-    <script>
-        // Basic Tailwind configuration (optional)
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#16a34a', // Main site green
-                        secondary: '#1e3a8a', // Dark blue
-                        whatsapp: '#25D366', // WhatsApp Green
-                        whatsapp_dark: '#128C7E', // Darker WhatsApp Green
-                    }
-                }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             }
         }
-    </script>
-</head>
-<body class="bg-gray-100 text-gray-800">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="LOGO_VERDE.jpeg" alt="Logo de CONSTRUCCION HARRIET" class="h-10 md:h-12 w-auto mr-2">
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#inicio" class="text-gray-600 hover:text-primary transition duration-300">Inicio</a>
-                <a href="#servicios" class="text-gray-600 hover:text-primary transition duration-300">Servicios</a>
-                <a href="#proyectos" class="text-gray-600 hover:text-primary transition duration-300">Proyectos</a>
-                <a href="#nosotros" class="text-gray-600 hover:text-primary transition duration-300">Nosotros</a>
-                <a href="#contacto" class="text-gray-600 hover:text-primary transition duration-300">Contacto</a>
-            </div>
-            <button class="md:hidden text-gray-600 focus:outline-none">
-                <span class="lucide">&#xe96d;</span> </button>
-        </nav>
-        </header>
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128C7E; /* Darker WhatsApp Green */
+        }
 
-    <section id="inicio" class="bg-secondary text-white py-20 md:py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <img src="LOGO_VERDE.jpeg" alt="Logo de CONSTRUCCION HARRIET" class="h-24 w-auto mx-auto mb-8">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Construyendo Tus Sueños, Ladrillo a Ladrillo</h1>
-            <p class="text-lg md:text-xl mb-8 text-gray-200">Experiencia, calidad y compromiso en cada proyecto. ¡Presupuestos sin cargo!</p>
-            <a href="#contacto" class="bg-primary hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg inline-flex items-center">
-                Contáctanos <span class="lucide ml-2">&#xe9b3;</span> </a>
-        </div>
-    </section>
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
 
-    <section id="servicios" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
-                    <span class="lucide text-primary text-4xl mb-4 self-center">&#xe91b;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Construcción</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
-                        <li>Sistema Tradicional</li>
-                        <li>Sistema Steel Frame</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
-                    <span class="lucide text-primary text-4xl mb-4 self-center">&#xe97b;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Planos</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
-                        <li>Regularización</li>
-                        <li>Mensura y Sub-división</li>
-                        <li>Loteos</li>
-                        <li>Obra Nueva</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col">
-                     <span class="lucide text-primary text-4xl mb-4 self-center">&#xea47;</span> <h3 class="text-xl font-semibold mb-3 text-secondary text-center">Extras</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow">
-                        <li>Portones y Rejas</li>
-                        <li>Termos Solares</li>
-                        <li>Cercos Perimetrales</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <section id="proyectos" class="py-16 md:py-24 bg-gray-100 overflow-hidden">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Galería de Proyectos</h2>
-            <div class="swiper-container-projects">
-                <div class="swiper project-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide h-auto">
-                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/16a34a/ffffff?text=Proyecto+Residencial+A" alt="Imagen de Proyecto Residencial A" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Residencia Moderna A</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto residencial A.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=Proyecto+Comercial+B" alt="Imagen de Proyecto Comercial B" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Edificio de Oficinas B</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto comercial B.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                           <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/cccccc/333333?text=Remodelación+C" alt="Imagen de Remodelación C" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Reforma Integral C</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve de la remodelación C.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/16a34a/ffffff?text=Proyecto+Residencial+D" alt="Imagen de Proyecto Residencial D" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Vivienda Unifamiliar D</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto residencial D.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=Proyecto+Comercial+E" alt="Imagen de Proyecto Comercial E" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Local Comercial E</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto comercial E.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                           <div class="project-card bg-white rounded-lg shadow-md overflow-hidden group">
-                                <img src="https://placehold.co/600x400/cccccc/333333?text=Remodelación+F" alt="Imagen de Remodelación F" class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
-                                <div class="p-5">
-                                    <h3 class="text-lg font-semibold mb-1 text-secondary">Ampliación Vivienda F</h3>
-                                    <p class="text-gray-600 text-sm mb-3">Descripción breve de la remodelación F.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev -left-2"></div>
-                    <div class="swiper-button-next -right-2"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-    <section id="nosotros" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <img src="https://placehold.co/600x450/1e3a8a/ffffff?text=Equipo+Constructora" alt="Imagen del equipo de la constructora" class="rounded-lg shadow-lg w-full">
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">Sobre CONSTRUCCION HARRIET</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">Somos una empresa constructora con amplia experiencia en el sector. Nuestro compromiso es entregar proyectos de alta calidad, cumpliendo con los plazos y presupuestos acordados.</p>
-                <p class="text-gray-600 mb-6 leading-relaxed">Nos apasiona construir relaciones sólidas con nuestros clientes, basadas en la confianza, la transparencia y la excelencia en cada detalle.</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Profesionalismo y Experiencia Comprobada</li>
-                    <li>Materiales de Primera Calidad</li>
-                    <li>Atención Personalizada</li>
-                    <li>Innovación y Sostenibilidad</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+            /* Optional: Add background if logo has transparency */
+            /* background-color: white;
+               border-radius: 50%; */
+        }
 
-    <section id="contacto" class="py-16 md:py-24 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-secondary">Ponte en Contacto</h2>
-            <p class="text-center text-gray-600 mb-10">
-                Llámanos al <a href="tel:+543416587861" class="text-primary hover:underline">341 658-7861</a> / <a href="tel:+543416937577" class="text-primary hover:underline">341 693-7577</a>, envíanos un <a href="https://wa.me/5493416587861" target="_blank" rel="noopener noreferrer" class="text-whatsapp hover:underline">WhatsApp</a> o completa el formulario.
-            </p>
-            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-                 <form action="mailto:matias.larenti@gmail.com" method="post" enctype="text/plain">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
-                            <input type="text" id="name" name="Nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" name="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <label for="subject" class="block text-gray-700 font-medium mb-2">Asunto</label>
-                        <input type="text" id="subject" name="Asunto" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
-                        <textarea id="message" name="Mensaje" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-primary hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg inline-flex items-center">
-                            Enviar Mensaje <span class="lucide ml-2">&#xe9eb;</span> </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+        .logo h1 {
+            font-size: 1.6rem; /* Adjusted size */
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
 
-    <footer class="bg-secondary text-gray-300 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-3">Contacto</h4>
-                    <p class="mb-1"><span class="lucide mr-2 align-middle inline-block">&#xe9d6;</span> <a href="tel:+543416587861" class="hover:text-primary">341 658-7861</a></p>
-                    <p><span class="lucide mr-2 align-middle inline-block">&#xe9d6;</span> <a href="tel:+543416937577" class="hover:text-primary">341 693-7577</a></p>
-                     <p class="mt-4 font-semibold text-primary">¡Presupuestos sin cargo!</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-3">Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#servicios" class="hover:text-primary transition duration-300">Servicios</a></li>
-                        <li><a href="#proyectos" class="hover:text-primary transition duration-300">Proyectos</a></li>
-                        <li><a href="#nosotros" class="hover:text-primary transition duration-300">Nosotros</a></li>
-                        <li><a href="#contacto" class="hover:text-primary transition duration-300">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-3">Síguenos</h4>
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://www.facebook.com/profile.php?id=100067952997183&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="https://www.instagram.com/construccionharriet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="https://wa.me/5493416587861" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-gray-300 hover:text-primary transition duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="border-gray-600 my-8">
-            <p class="text-sm">&copy; 2025 CONSTRUCCION HARRIET. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-    <a href="https://wa.me/5493416587861" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--highlight);
+        }
+
+        /* Hero Section */
+        .hero {
+            /* height: 80vh;  Removed fixed height, let content define */
+            padding: 6rem 0; /* Added padding */
+            /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-background.jpg') center/cover no-repeat; Replace with actual image */
+            background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(15, 76, 129, 0.8)), url('https://placehold.co/1200x800/0F4C81/cccccc?text=Construcci%C3%B3n+Harriet') center/cover no-repeat; /* Using placeholder and primary color gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            /* margin-top: 80px; Removed margin as body has padding-top now */
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem; /* Adjusted size */
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--highlight);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s; /* Added color transition */
+            border: 2px solid var(--highlight); /* Added border */
+        }
+
+        .btn:hover {
+            background-color: white;
+            border-color: white; /* Change border on hover */
+        }
+        .btn-secondary { /* Added secondary button style */
+             background-color: transparent;
+             color: white;
+             border: 2px solid white;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+
+        /* Services Section */
+        .services, .extras, .about, .contact /* Combined similar section padding */ {
+            padding: 4rem 0; /* Adjusted padding */
+        }
+        .services, .extras, .contact {
+             background-color: var(--accent-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h3 {
+            font-size: 2.2rem; /* Adjusted size */
+            text-transform: uppercase;
+            position: relative;
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--primary-color); /* Ensure heading color */
+        }
+
+        .section-header h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* Adjusted size */
+            height: 3px;
+            background-color: var(--highlight);
+        }
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Softer shadow */
+            transition: transform 0.3s, box-shadow 0.3s; /* Added shadow transition */
+            display: flex; /* Added for icon alignment */
+            flex-direction: column; /* Added */
+            align-items: center; /* Center icon and text */
+            text-align: center; /* Center text */
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Enhanced shadow */
+        }
+         .service-card i { /* Style for icons in service cards */
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            background-color: var(--highlight);
+            padding: 1rem;
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+
+
+        .service-card h4 {
+            font-size: 1.4rem; /* Adjusted size */
+            margin-bottom: 1rem;
+            color: var(--primary-color); /* Ensure heading color */
+        }
+
+        .service-card p {
+            color: var(--secondary-color);
+            flex-grow: 1; /* Allow paragraph to take space */
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem; /* Increased gap */
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem; /* Adjusted size */
+            margin-bottom: 1rem;
+            color: var(--primary-color); /* Ensure heading color */
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem; /* Increased spacing */
+            color: var(--secondary-color);
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem; /* Increased spacing */
+            color: var(--primary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start; /* Keep top alignment */
+            margin-bottom: 1.2rem; /* Adjusted spacing */
+            color: var(--secondary-color); /* Default text color */
+        }
+
+        .contact-item i {
+            margin-right: 1rem;
+            font-size: 1.3rem; /* Slightly larger */
+            color: var(--highlight);
+            width: 20px; /* Ensure alignment */
+            text-align: center;
+            margin-top: 2px; /* Fine-tune alignment */
+        }
+         .contact-item p, .contact-item a { /* Style paragraphs and links */
+             color: var(--secondary-color);
+             text-decoration: none;
+             transition: color 0.3s;
+         }
+         .contact-item a:hover {
+             color: var(--primary-color);
+         }
+
+
+        .contact-form h4 {
+             font-size: 1.5rem;
+             margin-bottom: 1.5rem;
+             color: var(--primary-color);
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select { /* Added select */
+            padding: 12px; /* Slightly more padding */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem; /* Ensure consistent font size */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+         .form-group input:focus,
+         .form-group textarea:focus,
+         .form-group select:focus {
+             outline: none;
+             border-color: var(--primary-color);
+             box-shadow: 0 0 5px rgba(15, 76, 129, 0.3);
+         }
+
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Social Media */
+        .social-media {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem; /* Increased spacing */
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem; /* Adjust icon size */
+            transition: background-color 0.3s, transform 0.3s; /* Added transform */
+        }
+
+        .social-icon:hover {
+            background-color: var(--highlight);
+            color: var(--primary-color);
+            transform: scale(1.1); /* Add scale effect */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 0; /* Increased padding */
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem; /* Added gap for wrapping */
+        }
+
+        .footer-logo img {
+            height: 50px;
+             /* Optional: Add background if logo has transparency */
+            /* background-color: white;
+               border-radius: 50%; */
+        }
+
+        .footer-links ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center; /* Center links when wrapped */
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--highlight);
+        }
+
+        .copyright {
+            width: 100%;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #aaa; /* Lighter gray */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+             body {
+                padding-top: 120px; /* Adjust for potentially taller header */
+             }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+             .logo h1 {
+                 font-size: 1.4rem;
+             }
+
+            nav ul {
+                /* flex-direction: column; Remove - handled by flex-wrap in header */
+                justify-content: center; /* Center nav items */
+                padding-left: 0; /* Remove default padding */
+                margin-top: 1rem; /* Add space below logo */
+            }
+
+            nav ul li {
+                margin: 0 10px; /* Horizontal margin */
+            }
+
+            .hero {
+                 padding: 4rem 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+             .about-img {
+                margin-top: 2rem; /* Add space above image */
+            }
+
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-links ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+         @media (max-width: 480px) {
+              body {
+                 padding-top: 150px; /* Further adjust for potentially taller header */
+              }
+              .logo h1 {
+                 font-size: 1.2rem;
+             }
+             nav ul li {
+                 margin: 0 5px; /* Reduce spacing */
+             }
+             .hero-content h2 {
+                 font-size: 1.8rem;
+             }
+             .section-header h3 {
+                 font-size: 1.8rem;
+             }
+             .services-grid, .contact-grid {
+                 grid-template-columns: 1fr; /* Single column */
+             }
+             .whatsapp-btn {
+                 width: 50px;
+                 height: 50px;
+                 line-height: 50px;
+                 font-size: 25px;
+                 bottom: 20px;
+                 right: 20px;
+             }
+         }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
+<body>
+    <a href="https://wa.me/5493416587861" class="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="LOGO_VERDE.jpeg" alt="Logo Construcción Harriet">
+                    <h1>Construcción Harriet</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#extras">Extras</a></li> <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Construcción Harriet</h2>
+                <p>Expertos en construcción tradicional y sistema steel frame en Rosario. Ofrecemos soluciones completas para tus proyectos con la mejor calidad y profesionalismo.</p>
+                <a href="#contacto" class="btn">Solicitar Presupuesto</a>
+                <a href="#servicios" class="btn btn-secondary" style="margin-left: 10px;">Ver Servicios</a> </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h3>Nuestros Servicios Principales</h3>
+                <p>Ofrecemos soluciones integrales en construcción para satisfacer todas tus necesidades</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                     <i class="fas fa-hard-hat"></i> <h4>Sistema Tradicional</h4>
+                    <p>Construcción con métodos tradicionales, brindando solidez y durabilidad a tu proyecto con los mejores materiales del mercado.</p>
+                </div>
+                <div class="service-card">
+                     <i class="fas fa-building"></i> <h4>Sistema Steel Frame</h4>
+                    <p>Construcción con estructura de acero, ofreciendo rapidez, eficiencia energética y flexibilidad en el diseño de tu proyecto.</p>
+                </div>
+                <div class="service-card">
+                     <i class="fas fa-ruler-combined"></i> <h4>Planos y Regularización</h4>
+                    <p>Diseño y regularización de planos para tus proyectos, asegurando el cumplimiento de todas las normativas vigentes.</p>
+                </div>
+                <div class="service-card">
+                     <i class="fas fa-map"></i> <h4>Mensura y Sub-División</h4>
+                    <p>Servicios profesionales de mensura y subdivisión de terrenos con precisión y conforme a las regulaciones locales.</p>
+                </div>
+                <div class="service-card">
+                     <i class="fas fa-th-large"></i> <h4>Loteos</h4>
+                    <p>Desarrollo y planificación de loteos, maximizando el aprovechamiento del espacio y cumpliendo con todas las normativas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i> <h4>Obra Nueva</h4>
+                    <p>Construcción de obra nueva desde cero, adaptándonos a tus necesidades y presupuesto con la máxima calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="extras about" id="extras"> <div class="container">
+            <div class="section-header">
+                <h3>Extras y Complementos</h3>
+                <p>Servicios adicionales para completar tu proyecto</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-solar-panel"></i> <h4>Termos Solares</h4>
+                    <p>Instalación de sistemas de calentamiento solar de agua, eficientes y amigables con el medio ambiente.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-slash"></i> <h4>Cercos Perimetrales</h4> <p>Construcción e instalación de cercos y muros perimetrales con diferentes materiales según tus necesidades de seguridad y privacidad.</p>
+                </div>
+                <div class="service-card">
+                     <i class="fas fa-door-closed"></i> <h4>Portones y Rejas</h4>
+                    <p>Diseño, fabricación e instalación de portones y rejas de seguridad personalizados para tu propiedad.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h3>Sobre Nosotros</h3>
+                <p>Conoce más sobre Construcción Harriet</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Expertos en Construcción en Rosario</h3>
+                    <p>En Construcción Harriet nos especializamos en ofrecer soluciones integrales para proyectos de construcción en Rosario y alrededores, combinando la solidez del sistema tradicional con la innovación del steel frame.</p>
+                    <p>Nuestro equipo de profesionales cuenta con amplia experiencia en el sector, garantizando la más alta calidad en cada uno de nuestros servicios y cumpliendo siempre con los plazos establecidos.</p>
+                    <p>Nos caracterizamos por nuestra seriedad, compromiso y atención personalizada, adaptándonos a las necesidades específicas de cada cliente y proyecto.</p>
+                    <a href="#contacto" class="btn">Contactar Ahora</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://placehold.co/600x400/0F4C81/FFFFFF?text=Equipo+Construcci%C3%B3n+Harriet" alt="Equipo Profesional de Construcción Harriet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h3>Contacto</h3>
+                <p>Solicita tu presupuesto sin cargo. ¡Estamos para ayudarte!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h4>Información de Contacto</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                             <p><a href="tel:+5493416587861">341 658-7861</a></p>
+                            <p><a href="tel:+5493416937577">341 693-7577</a></p>
+                        </div>
+                    </div>
+                     <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i> <div>
+                             <p><a href="https://wa.me/5493416587861" target="_blank" rel="noopener noreferrer">Chatea con nosotros por WhatsApp</a></p>
+                         </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Servicios en Rosario y alrededores (Consulta por tu zona)</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                         <p><a href="mailto:info@construccionharriet.com">info@construccionharriet.com</a></p>
+                    </div>
+                    <h4 style="margin-top: 2rem;">Redes Sociales</h4> <div class="social-media">
+                        <a href="https://www.instagram.com/construccionharriet/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                         <a href="https://www.facebook.com/profile.php?id=100067952997183" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        </div>
+                </div>
+                <div class="contact-form">
+                    <h4>Envíanos un mensaje</h4>
+                    <form action="https://formsubmit.co/matias.larenti@gmail.com" method="POST">
+                        <input type="hidden" name="_next" value="https://construccionesharriet.github.io/sitio/#contacto"> <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_subject" value="Nuevo Mensaje desde Sitio Web - Construccion Harriet">
+
+
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                             <input type="email" id="email" name="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono (Opcional)</label>
+                             <input type="tel" id="phone" name="Telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                             <select id="service" name="Servicio_Interes">
+                                <option value="">-- Selecciona uno --</option> <option value="tradicional">Sistema Tradicional</option>
+                                <option value="steel">Sistema Steel Frame</option>
+                                <option value="planos">Planos y Regularización</option>
+                                <option value="mensura">Mensura y Sub-División</option>
+                                <option value="loteos">Loteos</option>
+                                <option value="obra">Obra Nueva</option>
+                                <option value="extras">Extras (Termos, Cercos, etc.)</option>
+                                <option value="otro">Otro / Consulta General</option> </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                             <textarea id="message" name="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="LOGO_VERDE.jpeg" alt="Logo Construcción Harriet - Footer">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                         <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                         <li><a href="#extras">Extras</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Construcción Harriet. Todos los derechos reservados. | Sitio web desarrollado con asistencia de IA.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // --- Mobile Menu Logic ---
-        const menuButton = document.querySelector('header button.md\\:hidden');
-        const navLinksContainer = document.querySelector('header div.hidden.md\\:flex');
-        const mobileNavLinks = document.createElement('div');
-        const header = document.querySelector('header');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80; // Height of fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        mobileNavLinks.classList.add('hidden', 'absolute', 'bg-white', 'w-full', 'left-0', 'py-4', 'shadow-lg', 'md:hidden', 'flex-col', 'items-center', 'space-y-4', 'z-40');
-
-        function positionMobileMenu() {
-          mobileNavLinks.style.top = header.offsetHeight + 'px';
-        }
-        positionMobileMenu();
-
-        if (navLinksContainer) {
-            const linksToClone = navLinksContainer.querySelectorAll('a');
-            linksToClone.forEach(link => {
-                const clonedLink = link.cloneNode(true);
-                clonedLink.classList.add('py-2', 'w-full', 'text-center');
-                mobileNavLinks.appendChild(clonedLink);
-            });
-            document.body.appendChild(mobileNavLinks);
-        }
-
-        if (menuButton && mobileNavLinks) {
-            menuButton.addEventListener('click', () => {
-                const isHidden = mobileNavLinks.classList.contains('hidden');
-                mobileNavLinks.classList.toggle('hidden', !isHidden);
-                mobileNavLinks.classList.toggle('flex', isHidden);
-                menuButton.querySelector('.lucide').innerHTML = isHidden ? '&#xe96a;' : '&#xe96d;';
-            });
-        }
-
-        const mobileLinks = mobileNavLinks.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNavLinks.classList.add('hidden');
-                mobileNavLinks.classList.remove('flex');
-                menuButton.querySelector('.lucide').innerHTML = '&#xe96d;';
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
-        window.addEventListener('resize', positionMobileMenu);
+        // No se necesita el script de validación del formulario aquí si se usa FormSubmit
+        // El navegador y FormSubmit manejarán la validación básica (required) y el envío.
 
-        document.addEventListener('click', (event) => {
-          const isClickInsideMenu = mobileNavLinks.contains(event.target);
-          const isClickOnMenuButton = menuButton.contains(event.target);
-          if (!isClickInsideMenu && !isClickOnMenuButton && !mobileNavLinks.classList.contains('hidden')) {
-            mobileNavLinks.classList.add('hidden');
-            mobileNavLinks.classList.remove('flex');
-            menuButton.querySelector('.lucide').innerHTML = '&#xe96d;';
-          }
-        });
-
-        // --- Swiper Initialization ---
-        const swiper = new Swiper('.project-swiper', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 30 }
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoHeight: false,
-        });
     </script>
-
 </body>
 </html>
+
